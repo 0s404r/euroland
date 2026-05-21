@@ -6,13 +6,13 @@ export const Route = createFileRoute('/')({
   component: LandingPage,
 })
 
-// ─── Language Switcher ────────────────────────────────────────────────────────
+// âââ Language Switcher ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function LanguageSwitcher() {
   const { lang, setLang } = useLanguage()
   const languages: { code: Lang; flag: string; label: string }[] = [
-    { code: 'pt', flag: '🇧🇷', label: 'PT' },
-    { code: 'es', flag: '🇪🇸', label: 'ES' },
-    { code: 'en', flag: '🇬🇧', label: 'EN' },
+    { code: 'pt', flag: 'ð§ð·', label: 'PT' },
+    { code: 'es', flag: 'ðªð¸', label: 'ES' },
+    { code: 'en', flag: 'ð¬ð§', label: 'EN' },
   ]
   return (
     <div className="flex items-center gap-1">
@@ -35,7 +35,7 @@ function LanguageSwitcher() {
   )
 }
 
-// ─── Marquee Bar ───────────────────────────────────────────────────────────────
+// âââ Marquee Bar âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function MarqueeBar() {
   const { t } = useLanguage()
   const items = Array.from({ length: 12 }, (_, i) => {
@@ -64,7 +64,7 @@ function MarqueeBar() {
               )}
             </svg>
             <span data-i18n={item.key}>{t(item.key)}</span>
-            <span className="text-[#FF5A1F] mx-2">·</span>
+            <span className="text-[#FF5A1F] mx-2">Â·</span>
           </span>
         ))}
       </div>
@@ -72,7 +72,7 @@ function MarqueeBar() {
   )
 }
 
-// ─── Header ────────────────────────────────────────────────────────────────────
+// âââ Header ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function Header() {
   const { t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
@@ -87,7 +87,7 @@ function Header() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex flex-col leading-none">
           <span className="font-['Barlow_Condensed'] text-2xl font-black tracking-tight text-[#1a1a1a]">
-            Aqua<span className="text-[#FF5A1F]">Pro</span><span className="text-gray-400">·ES</span>
+            Aqua<span className="text-[#FF5A1F]">Pro</span><span className="text-gray-400">Â·ES</span>
           </span>
           <span data-i18n="header.tagline" className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase">{t('header.tagline')}</span>
         </div>
@@ -103,7 +103,7 @@ function Header() {
   )
 }
 
-// ─── Offer Bar with Countdown ──────────────────────────────────────────────────
+// âââ Offer Bar with Countdown ââââââââââââââââââââââââââââââââââââââââââââââââââ
 function OfferBar() {
   const { t } = useLanguage()
   const INITIAL = 15 * 60
@@ -136,7 +136,7 @@ function OfferBar() {
   )
 }
 
-// ─── Stars ─────────────────────────────────────────────────────────────────────
+// âââ Stars âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function Stars({ count = 5 }: { count?: number }) {
   return (
     <div className="flex gap-0.5">
@@ -149,7 +149,7 @@ function Stars({ count = 5 }: { count?: number }) {
   )
 }
 
-// ─── Hero ──────────────────────────────────────────────────────────────────────
+// âââ Hero ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const TruckIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
@@ -184,7 +184,7 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl transform rotate-2"></div>
               <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl border border-orange-100 p-4">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0854/5225/9646/files/9-min_480x480-ezgif.com-optiwebp_480x480.webp"
+                  src="/download.png"
                   alt={t('hero.imgAlt')}
                   className="w-full h-auto object-contain rounded-2xl"
                   loading="eager"
@@ -216,7 +216,7 @@ function Hero() {
             <div className="flex items-center gap-3 flex-wrap">
               <Stars />
               <span data-i18n="hero.ratingScore" className="font-bold text-gray-700 text-sm">{t('hero.ratingScore')}</span>
-              <span className="text-gray-400 text-sm">·</span>
+              <span className="text-gray-400 text-sm">Â·</span>
               <span data-i18n="hero.customers" className="text-gray-500 text-sm font-medium">{t('hero.customers')}</span>
             </div>
 
@@ -274,7 +274,7 @@ function Hero() {
   )
 }
 
-// ─── Features ──────────────────────────────────────────────────────────────────
+// âââ Features ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const featureIcons = [
   () => (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -343,7 +343,7 @@ function FeaturesSection() {
   )
 }
 
-// ─── Use Cases ─────────────────────────────────────────────────────────────────
+// âââ Use Cases âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const useCaseImages = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
   'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80',
@@ -389,7 +389,7 @@ function UseCasesSection() {
   )
 }
 
-// ─── How It Works ──────────────────────────────────────────────────────────────
+// âââ How It Works ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const stepIcons = [
   () => (
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -444,7 +444,7 @@ function HowItWorks() {
   )
 }
 
-// ─── Testimonials ──────────────────────────────────────────────────────────────
+// âââ Testimonials ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const testimonialColors = [
   'bg-pink-100 text-pink-700',
   'bg-blue-100 text-blue-700',
@@ -496,7 +496,7 @@ function Testimonials() {
   )
 }
 
-// ─── Order Form ────────────────────────────────────────────────────────────────
+// âââ Order Form ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const packs = [
   { id: 1, qty: 1, priceEach: 64.99, total: 64.99, badgeKey: null as string | null, savings: null as number | null },
   { id: 2, qty: 2, priceEach: 54.99, total: 109.98, badgeKey: 'order.bestSeller', savings: 20 },
@@ -547,7 +547,7 @@ function OrderForm() {
       quantity: currentPack.qty,
       phone: form.telefono.trim(),
       email: '',
-      product_title: 'Hidrolavadora Portátil Inalámbrica 48V de Alta Presión',
+      product_title: 'Hidrolavadora PortÃ¡til InalÃ¡mbrica 48V de Alta PresiÃ³n',
       address: form.direccion.trim(),
       city: '',
       zipcod: form.cp.trim(),
@@ -597,7 +597,7 @@ function OrderForm() {
               <div className="flex justify-between"><span data-i18n="order.success.pack">{t('order.success.pack')}</span><span className="font-bold">{packLabel(currentPack.qty)}</span></div>
               <div className="flex justify-between"><span data-i18n="order.success.quantity">{t('order.success.quantity')}</span><span className="font-bold">{currentPack.qty} {currentPack.qty > 1 ? t('order.success.units') : t('order.success.unit')}</span></div>
               <div className="flex justify-between"><span data-i18n="order.success.shipping">{t('order.success.shipping')}</span><span data-i18n="order.free" className="font-bold text-green-600">{t('order.free')}</span></div>
-              <div className="flex justify-between pt-1 border-t border-green-100"><span data-i18n="order.success.total" className="font-bold">{t('order.success.total')}</span><span className="font-black text-[#FF5A1F] text-base">{currentPack.total.toFixed(2).replace('.', ',')}€</span></div>
+              <div className="flex justify-between pt-1 border-t border-green-100"><span data-i18n="order.success.total" className="font-bold">{t('order.success.total')}</span><span className="font-black text-[#FF5A1F] text-base">{currentPack.total.toFixed(2).replace('.', ',')}â¬</span></div>
             </div>
           </div>
         </div>
@@ -647,10 +647,10 @@ function OrderForm() {
                         )}
                       </div>
                       <p className="text-sm text-gray-500 mt-0.5">
-                        {pack.priceEach.toFixed(2).replace('.', ',')}€{t('order.perUnit')}{pack.savings ? ` · ${t('order.save')} ${pack.savings}€` : ''}
+                        {pack.priceEach.toFixed(2).replace('.', ',')}â¬{t('order.perUnit')}{pack.savings ? ` Â· ${t('order.save')} ${pack.savings}â¬` : ''}
                       </p>
                     </div>
-                    <span className="font-black text-xl text-[#FF5A1F] shrink-0">{pack.total.toFixed(2).replace('.', ',')}€</span>
+                    <span className="font-black text-xl text-[#FF5A1F] shrink-0">{pack.total.toFixed(2).replace('.', ',')}â¬</span>
                   </label>
                 ))}
               </div>
@@ -690,7 +690,7 @@ function OrderForm() {
               <div className="bg-gray-50 rounded-2xl p-5 mb-5 border border-gray-100 space-y-2 text-sm">
                 <div className="flex justify-between text-gray-600">
                   <span data-i18n="order.productLabel">{t('order.productLabel')} ({currentPack.qty} {currentPack.qty > 1 ? t('order.unitsAbbr') : t('order.unitAbbr')})</span>
-                  <span className="font-semibold">{currentPack.total.toFixed(2).replace('.', ',')}€</span>
+                  <span className="font-semibold">{currentPack.total.toFixed(2).replace('.', ',')}â¬</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span data-i18n="order.shipping">{t('order.shipping')}</span>
@@ -698,7 +698,7 @@ function OrderForm() {
                 </div>
                 <div className="flex justify-between text-[#1a1a1a] font-black text-lg pt-2 border-t border-gray-200">
                   <span data-i18n="order.totalLabel">{t('order.totalLabel')}</span>
-                  <span className="text-[#FF5A1F]">{currentPack.total.toFixed(2).replace('.', ',')}€</span>
+                  <span className="text-[#FF5A1F]">{currentPack.total.toFixed(2).replace('.', ',')}â¬</span>
                 </div>
               </div>
 
@@ -739,7 +739,7 @@ function OrderForm() {
   )
 }
 
-// ─── FAQ ───────────────────────────────────────────────────────────────────────
+// âââ FAQ âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function FAQ() {
   const { t } = useLanguage()
   const [open, setOpen] = useState<number | null>(null)
@@ -782,7 +782,7 @@ function FAQ() {
   )
 }
 
-// ─── Footer ────────────────────────────────────────────────────────────────────
+// âââ Footer ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function Footer() {
   const { t } = useLanguage()
   const guarantees = ['footer.guarantee1', 'footer.guarantee2', 'footer.guarantee3']
@@ -794,7 +794,7 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
           <div>
             <div className="font-['Barlow_Condensed'] text-3xl font-black text-white mb-2">
-              Aqua<span className="text-[#FF5A1F]">Pro</span><span className="text-gray-500">·ES</span>
+              Aqua<span className="text-[#FF5A1F]">Pro</span><span className="text-gray-500">Â·ES</span>
             </div>
             <p data-i18n="footer.description" className="text-sm text-gray-400 leading-relaxed">
               {t('footer.description')}
@@ -832,7 +832,7 @@ function Footer() {
             {legalLinks.map((key, i, arr) => (
               <span key={key} className="flex items-center gap-4">
                 <a href="#" data-i18n={key} className="hover:text-[#FF5A1F] transition-colors">{t(key)}</a>
-                {i < arr.length - 1 && <span className="text-gray-700 hidden sm:inline">·</span>}
+                {i < arr.length - 1 && <span className="text-gray-700 hidden sm:inline">Â·</span>}
               </span>
             ))}
           </div>
@@ -851,7 +851,7 @@ function Footer() {
   )
 }
 
-// ─── Main ──────────────────────────────────────────────────────────────────────
+// âââ Main ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
