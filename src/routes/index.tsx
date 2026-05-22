@@ -564,6 +564,19 @@ function OrderForm() {
         body: JSON.stringify(payload),
       })
       setSubmitted(true)
+      try {
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Purchase', {
+            value: currentPack.total,
+            currency: 'EUR',
+            content_ids: [SKU_MAP[selectedPack]],
+            content_type: 'product',
+            content_name: 'Hidrolavadora Portatil Inalambrica 48V de Alta Presion',
+            num_items: currentPack.qty,
+            contents: [{ id: SKU_MAP[selectedPack], quantity: currentPack.qty, item_price: currentPack.priceEach }],
+          })
+        }
+      } catch (err) { console.error('fbq Purchase error', err) }
     } catch {
       setNetworkError(t('order.networkError'))
     } finally {
