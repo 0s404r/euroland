@@ -1,10 +1,32 @@
+import { useEffect } from 'react'
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { LanguageProvider } from '../i18n'
 import '../styles.css'
 
 const META_PIXEL_ID = '4509995009326378'
 
-const metaPixelScript = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','" + META_PIXEL_ID + "');fbq('track','PageView');"
+function MetaPixel() {
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if ((window as any).fbq) return
+    var n: any = (window as any).fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    }
+    if (!(window as any)._fbq) (window as any)._fbq = n
+    n.push = n
+    n.loaded = true
+    n.version = '2.0'
+    n.queue = []
+    var t = document.createElement('script')
+    t.async = true
+    t.src = 'https://connect.facebook.net/en_US/fbevents.js'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode!.insertBefore(t, s)
+    ;(window as any).fbq('init', META_PIXEL_ID)
+    ;(window as any).fbq('track', 'PageView')
+  }, [])
+  return null
+}
 
 export const Route = createRootRoute({
   head: () => ({
@@ -28,7 +50,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
-        <script dangerouslySetInnerHTML={{ __html: metaPixelScript }} />
       </head>
       <body>
         <noscript>
@@ -40,6 +61,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             alt=""
           />
         </noscript>
+        <MetaPixel />
         <LanguageProvider>
           {children}
         </LanguageProvider>
