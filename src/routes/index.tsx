@@ -10,7 +10,7 @@ export const Route = createFileRoute('/')({
 function LanguageSwitcher() {
   const { lang, setLang } = useLanguage()
   const languages: { code: Lang; flag: string; label: string }[] = [
-    { code: 'pt', flag: '🇧🇷', label: 'PT' },
+    { code: 'pt', flag: '🇵🇹', label: 'PT' },
     { code: 'es', flag: '🇪🇸', label: 'ES' },
     { code: 'en', flag: '🇬🇧', label: 'EN' },
   ]
@@ -504,9 +504,9 @@ const packs = [
 ]
 
 const SKU_MAP: Record<number, string> = {
-  1: 'AQUAPRO-48V-1U',
-  2: 'AQUAPRO-48V-2U',
-  3: 'AQUAPRO-48V-3U',
+  1: 'O-4226',
+  2: 'O-4226',
+  3: 'O-4226',
 }
 
 const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzQKOX9tXnVW2x0L-qD3j5GHqRUdGbHJZpZYzV3KmjPOd0xAfVrTMl9jIe1VpWSWrsoNQ/exec'
